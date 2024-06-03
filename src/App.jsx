@@ -1,6 +1,16 @@
 import React from "react"
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
+/** initially imported {...link} from "react-router-dom and
+    got a SyntaxError: The requested module 
+    '/node_modules/.vite/deps/react-router-dom.js?t=1717417228255&v=425e280b'
+     does not provide an export named 'link'
+*
+* then I changed it to import { Link } from "react-router-dom"
+* and it worked
+*
+*/
+
 import Home from "./pages/Home"
 import About from "./pages/About"
 /**
