@@ -1,6 +1,7 @@
 import React from "react"
-import { BrowserRouter as router, Routes,Route, link } from "react-router-dom"
-import Home from "./pages/Home."
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+
+import Home from "./pages/Home"
 import About from "./pages/About"
 /**
  * Challenge:
@@ -21,7 +22,20 @@ import About from "./pages/About"
 function App() {
 
   return (
-    <h1>Start here</h1>
+    <BrowserRouter>
+
+       <>
+       <Link to="/Home">Home</Link>
+       <Link to="/About">About</Link>
+       </>
+      <Routes>
+       <Route path="/Home" element={<Home />} />
+       <Route path="/About" element={<About />} />
+     
+      </Routes>
+    
+    </BrowserRouter>
+    
   )
 }
 
