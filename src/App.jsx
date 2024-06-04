@@ -15,6 +15,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home"
 import About from "./pages/About"
 import Navbar from "./components/Navbar";
+import PAsystems from "./components/PAsystems";
 /**
  * Challenge:
  * Bootstrap the VanLife project by creating the first 2 routes:
@@ -38,7 +39,7 @@ function App() {
 
       <Navbar/>
       <Routes>
-        
+        <Route path="/PAsystems" element={<PAsystems />} />
         <Route path="/Home" element={<Home />} />
         <Route path="/About" element={<About />} />
         
