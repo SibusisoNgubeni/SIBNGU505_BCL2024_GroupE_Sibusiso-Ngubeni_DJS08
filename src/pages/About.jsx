@@ -1,10 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import heroImg from "../Assets/images/heroImg.jpg"
 
 export default function About() {
   return (
     <div className="about-page-container">
-      
+      <section><img src={heroImg} className="about-hero-image" />
         <div className="about-page-content">
          <h1>Why buy a standard PA system when you can have it custom built.</h1>
          <p>Our mission at <strong>AudiGold Acoustics</strong> is to provide personalized solutions that fit your specific use case. We understand that every client has unique requirements, and we're committed to delivering customized PA systems that meet your needs, whether you're hosting a small event or a large stadium</p>
@@ -15,6 +16,8 @@ export default function About() {
          <h2>Your customization options are virtually limitless!<br />Your Custom PA system is waiting.</h2>
          <Link className="link-button" to="/vans">Explore Designs</Link>
          </div>
+         </section>
+       
         
     </div>
         
