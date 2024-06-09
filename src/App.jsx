@@ -16,7 +16,7 @@ import Home from "./pages/Home"
 import About from "./pages/About"
 import Navbar from "./components/Navbar";
 import Vans from "./components/PAsystems";
-
+import SystemDetails from "./components/PAsystemsDetails";
 
 /**
  * Challenge:
@@ -45,7 +45,7 @@ function App() {
         <Route path="/Home" element={<Home />} />
         <Route path="/About" element={<About />} />
         <Route path="/vans" element={<Vans />} />
-        
+        <Route path="/vans/:id" element= {<SystemDetails />} />       
       
      
       </Routes>
