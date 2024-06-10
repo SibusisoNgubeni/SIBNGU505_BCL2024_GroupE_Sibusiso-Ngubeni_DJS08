@@ -14,45 +14,35 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 import Home from "./pages/Home"
 import About from "./pages/About"
-import Navbar from "./components/Navbar";
 import Vans from "./components/PAsystems";
 import SystemDetails from "./components/PAsystemsDetails";
-import Dashboard from "./pages/Host/Dashboard";
+
 import Income from "./pages/Host/Income";
 import Reviews from "./pages/Host/Reviews";
-
+import Layout from "./components/layout";
+import HostLayout from "./components/HostLayout";
 
 /**
- * Challenge:
- * Bootstrap the VanLife project by creating the first 2 routes:
- * Home and About.
+ * Layout route fixed, Note: component imports should be uppercase
  * 
- * Also include the navbar that can link between the two routes.
- * For now, you'll either need to copy/paste the navbar code
- * to both Home and About pages, or you'll need to find a place
- * to put it where it can be shared between the two pages.
- * (Don't overthink this part - just do whatever is easiest for
- * you because we'll learn a better approach very soon)
- * 
- * Review challenge: do all the CSS yourself based on the design
- * linked in the slides.
  */
-
 function App() {
 
   return (
     <BrowserRouter>
-
-      <Navbar/>
       <Routes>
+        <Route  element={<Layout />}> 
         <Route path="/PAsystems" element={<Vans />} />
         <Route path="/Home" element={<Home />} />
         <Route path="/About" element={<About />} />
         <Route path="/vans" element={<Vans />} />
         <Route path="/vans/:id" element= {<SystemDetails />} />     
-        <Route path="/host" element={<Dashboard />} />
-        <Route path="/host/income" element={<Income />} />
-        <Route path="/host/reviews" element={<Reviews />} />  
+        </Route>
+
+        <Route path="/components/HostLayout" element={<HostLayout />}>
+            <Route path="/host/income" element={<Income />} />
+            <Route path="/host/reviews" element={<Reviews />} />
+        </Route>
       
      
       </Routes>
