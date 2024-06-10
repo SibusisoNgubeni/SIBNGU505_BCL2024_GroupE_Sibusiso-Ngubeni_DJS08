@@ -17,6 +17,7 @@ const Navbar = () => {
     <Link className="site-logo" to="/"><img class ="logo" src = "src\Assets\images\audio gold.png"/></Link>
     <nav>
      
+      <Link to="/host">Host</Link>
       <Link to="/Home">Home</Link>
       <Link to="/about">About</Link>
       <Link to= "/PAsystems">Designs</Link>
