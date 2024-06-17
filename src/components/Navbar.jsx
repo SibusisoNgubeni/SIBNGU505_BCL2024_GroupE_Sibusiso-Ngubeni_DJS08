@@ -9,23 +9,21 @@ import { Link } from 'react-router-dom'
    and doesn't automatically use or render the component associated with that path
 */
 
-
-const Navbar = () => {
+export default function Navbar() {
   return (
     <header>
     
     <Link className="site-logo" to="/"><img class ="logo" src = "src\Assets\images\audio gold.png"/></Link>
     <nav>
      
-      <Link to="/host">Host</Link>
+      <Link to="/Host">Host</Link>
       <Link to="/Home">Home</Link>
-      <Link to="/about">About</Link>
+      <Link to="/About">About</Link>
       <Link to= "/PAsystems">Designs</Link>
     </nav>
   </header>
+      
   )
 }
-
-export default Navbar
 
 

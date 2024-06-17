@@ -7,48 +7,39 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
     '/node_modules/.vite/deps/react-router-dom.js?t=1717417228255&v=425e280b'
      does not provide an export named 'link'
 *
-* then I changed it to import { Link } from "react-router-dom"
-* and it worked
+* Link can only be imported once, if you are gonna import a file with {Link}, it will 
+  give an error if you duplicate import Link again in App.jsx
 *
 */
 
-import Home from "./pages/Home"
-import About from "./pages/About"
-import Vans from "./components/PAsystems";
-import SystemDetails from "./components/PAsystemsDetails";
-
-import Income from "./pages/Host/Income";
-import Reviews from "./pages/Host/Reviews";
-import Layout from "./components/layout";
-import HostLayout from "./components/HostLayout";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import PAsystems from "./components/PAsystems"
+import Dashboard from "./pages/Host/Dashboard";
+import PAsystemsDetails from "./components/PAsystemsDetails";
 
 /**
- * Layout route fixed, Note: component imports should be uppercase
+ * 
  * 
  */
 function App() {
 
   return (
     <BrowserRouter>
+     <Navbar/>
       <Routes>
-        <Route  element={<Layout />}> 
-        <Route path="/PAsystems" element={<Vans />} />
         <Route path="/Home" element={<Home />} />
         <Route path="/About" element={<About />} />
-        <Route path="/vans" element={<Vans />} />
-        <Route path="/vans/:id" element= {<SystemDetails />} />     
-        </Route>
+        <Route path="/PAsystems" element={<PAsystems />} />
+        <Route path="/host/Dashboard" element={<Dashboard/>}/>
+        <Route path="/PAsystems/:id" element={<PAsystemsDetails />}/>
 
-        <Route path="/components/HostLayout" element={<HostLayout />}>
-            <Route path="/host/income" element={<Income />} />
-            <Route path="/host/reviews" element={<Reviews />} />
-        </Route>
-      
-     
+
+            
       </Routes>
     
     </BrowserRouter>
-    
   )
 }
 
